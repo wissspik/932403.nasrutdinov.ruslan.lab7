@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Каталог рецептов на Express и SQLite." />
+    <title>Моя кухня — каталог рецептов</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Перейти к рецептам</a>
+    <header class="page-header">
+      <div class="container header-row">
+        <div>
+          <p class="eyebrow">Лабораторная работа №7 · вариант 13</p>
+          <h1>Моя кухня</h1>
+          <p>Рецепты, отсортированные по времени приготовления.</p>
+        </div>
+        <button id="open-form" class="button button--light" type="button">+ Новый рецепт</button>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <section class="toolbar" aria-label="Фильтр рецептов">
+        <label for="difficulty-filter">Сложность</label>
+        <select id="difficulty-filter">
+          <option value="">Все уровни</option>
+          <option value="easy">Легко</option>
+          <option value="medium">Средне</option>
+          <option value="hard">Сложно</option>
+        </select>
+        <p id="recipe-count">Загрузка…</p>
+      </section>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+      <section id="recipe-list" class="recipe-grid" aria-label="Список рецептов"></section>
+      <p id="empty-state" class="empty-state" hidden>Рецептов с такой сложностью пока нет.</p>
+    </main>
+
+    <dialog id="recipe-dialog" aria-labelledby="dialog-title">
+      <form id="recipe-form" method="dialog">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow eyebrow--dark">Карточка рецепта</p>
+            <h2 id="dialog-title">Новый рецепт</h2>
+          </div>
+          <button id="close-dialog" class="icon-button" type="button" aria-label="Закрыть">×</button>
+        </div>
+        <input id="recipe-id" type="hidden" />
+        <label for="recipe-name">Название</label>
+        <input id="recipe-name" name="name" maxlength="100" required />
+        <label for="recipe-difficulty">Сложность</label>
+        <select id="recipe-difficulty" name="difficulty" required>
+          <option value="easy">Легко</option>
+          <option value="medium">Средне</option>
+          <option value="hard">Сложно</option>
+        </select>
+        <label for="recipe-time">Время приготовления, минут</label>
+        <input id="recipe-time" name="cooking_time_min" type="number" min="1" step="1" required />
+        <div class="dialog-actions">
+          <button id="cancel-dialog" class="button button--secondary" type="button">Отмена</button>
+          <button class="button" type="submit">Сохранить</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer><p>Руслан Насрутдинов · группа 932403</p></footer>
+  </body>
+</html>
