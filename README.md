@@ -53,9 +53,11 @@ npm start
 
 ## Публичная ссылка
 
-**Активной публичной ссылки сейчас нет.** Старая ссылка больше не подключена к запущенному туннелю и показывает Cloudflare Error 1033. Quick Tunnel не имеет постоянного адреса: новый URL появится в выводе `cloudflared` только после успешного подключения к Cloudflare.
+**Рабочий Cloudflare Quick Tunnel:** [https://chance-tasks-saying-surface.trycloudflare.com](https://chance-tasks-saying-surface.trycloudflare.com)
 
-### Запуск Cloudflare Tunnel
+Ссылка доступна, пока запущены сервер и процесс `cloudflared`. Quick Tunnel временный; после остановки процесса ссылка перестанет работать.
+
+## Запуск Cloudflare Tunnel
 
 Установите `cloudflared`, затем из папки проекта выполните:
 
